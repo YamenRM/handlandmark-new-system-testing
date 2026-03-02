@@ -1,67 +1,88 @@
 # Computer Vision Playground
 
-Computer Vision Playground is an interactive computer vision application built with Streamlit, MediaPipe, OpenCV, and PyAutoGUI.  
-The project demonstrates real-time face tracking, hand tracking, gesture control, and visual effects using a webcam.
+Interactive real-time computer vision experiments built with Python.
+The application demonstrates face tracking, hand tracking, gesture-based control, augmented reality overlays, and air drawing using a webcam.
 
 ---
 
-## Features
+# Demo
 
-### Face Landmark Detection
-Detects and tracks facial landmarks in real time using your webcam.  
-The application visualizes facial key points to demonstrate how computer vision models understand facial structure.
+![Hand Tracking Demo](assets/demo-hand.gif)
 
-### Hand Landmark Detection
-Tracks hand movements and identifies finger positions using MediaPipe's hand tracking model.
-
-### AR Hand Effect
-A transparent **Doctor Strange hand effect** is overlaid on the detected hand.  
-The image follows the hand in real time, creating a simple augmented reality experience.
-
-### Gesture-Based Mouse Control
-Hand gestures are translated into mouse actions such as:
-- Cursor movement
-- Clicking
-- Basic interaction without touching the mouse
-
+![Drawing Demo](assets/demo-drawing.gif)
 
 ---
 
-## Tech Stack
+# Features
 
-- Python
-- Streamlit
-- MediaPipe
-- OpenCV
-- PyAutoGUI
+## Face Landmark Detection
+
+Real-time facial landmark tracking using MediaPipe.
+The system detects key facial points and visualizes them directly on the video stream.
+
+## Hand Landmark Detection
+
+Tracks finger positions and hand structure with high accuracy.
+
+## AR Hand Effect
+
+A transparent Doctor Strange–style visual effect follows the detected hand in real time, creating a simple augmented reality interaction.
+
+## Gesture-Based Mouse Control
+
+Control your computer using hand gestures:
+
+* Move cursor
+* Click actions
+* Touchless interaction
+
+## Virtual Air Drawing
+
+Turn your index finger into a digital brush:
+
+* Draw in real time
+* Clear the canvas
+* Smooth motion tracking
 
 ---
 
-## Assets and Models
+# Tech Stack
 
-used models:
-
-- `models/` → [handlandmarker model](https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task) ,
-  [facelandmarker model](https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task)
-- `assets/` → [dr.strange hand img](https://pngtree.com/so/dr-strange)
-
----
-
-## How It Works
-
-1. The webcam captures video frames.
-2. OpenCV processes the frames.
-3. MediaPipe detects face and hand landmarks.
-4. The program interprets gestures or positions.
-5. Visual effects or mouse actions are applied in real time.
+* Python
+* Streamlit
+* MediaPipe
+* OpenCV
+* PyAutoGUI
 
 ---
 
-## How to Use
+# Project Structure
 
-Follow the instructions below to work with **Computer Vision Playground**.
+```
+computer-vision-playground
+│
+├── src
+│   ├── main.py
+│   ├── facelandmark.py
+│   ├── hand_landmark_mask.py
+│   ├── mouse_control.py
+│   └── drawing_mode.py
+│
+├── models
+│   ├── hand_landmarker.task
+│   └── face_landmarker.task
+│
+├── assets
+│   ├── dr_strange_hand.png
+│   └── demo.gif
+│
+├── requirements.txt
+└── README.md
+```
 
-### 1- Installation
+---
+
+# Installation
 
 ```bash
 git clone https://github.com/yourusername/computer-vision-playground.git
@@ -69,35 +90,57 @@ cd computer-vision-playground
 pip install -r requirements.txt
 ```
 
-#### 2- Change model parameters(optinal)
+---
 
-feel free to change the options of the models .
-
-### 3- run main.py
+# Run the Application
 
 ```bash
 streamlit run src/main.py
 ```
-### 4- choose the mode 
-1. Face Landmark Detection
 
-2. Hand Landmark Mask
+Open the local Streamlit address shown in the terminal.
 
-3. Hand Mouse Control
-
-### 5- Allow camera access
-
-### 6- Have fun
+Allow camera access when prompted.
 
 ---
 
-## Future Improvements
+# Models
 
-- Virtual drawing
-- Gesture shortcuts
-- Performance optimization
+Used Models
+
+[Hand Landmarker](https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/latest/hand_landmarker.task)
+
+[Face Landmarker](https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task)
 
 ---
 
-## Author
-YamenRM | 2026 
+# How to Use
+
+1. Launch the application.
+2. Select a mode from the interface.
+3. Position yourself in front of the webcam.
+4. Try different gestures.
+
+Available modes:
+
+* Face Landmark Detection
+* Hand Landmark Mask
+* Hand Mouse Control
+* Drawing Mode
+
+---
+
+# Future Improvements
+
+* Gesture shortcuts
+* Multiple brush colors
+* Adjustable brush size
+* Performance optimization
+* Additional AR effects
+
+---
+
+# Author
+
+YamenRM
+AI Engineering Student
